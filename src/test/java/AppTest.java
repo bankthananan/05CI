@@ -5,8 +5,24 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    @Test
+    public void testSmallPrime() {
+        App app = new App();
+        assertEquals(app.isPrime(17),true);
+    }
+    @Test
+    public void testSmallNoPrime() {
+        App app = new App();
+        assertEquals(app.isPrime(33),false);
+    }
+    @Test
+    public void testLargePrime() {
+        App app = new App();
+        assertEquals(app.isPrime(32416189049L),true);
+    }
+    @Test
+    public void testLargeNoPrime() {
+        App app = new App();
+        assertEquals(app.isPrime(32416169051L),false);
     }
 }
